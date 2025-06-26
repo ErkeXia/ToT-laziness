@@ -1,7 +1,7 @@
 import os
 import openai
 import backoff 
-
+# print(openai.Model.list())
 completion_tokens = prompt_tokens = 0
 
 api_key = os.getenv("OPENAI_API_KEY", "")
@@ -29,10 +29,14 @@ def chatgpt(messages, model="gpt-4", temperature=0.7, max_tokens=1000, n=1, stop
     while n > 0:
         cnt = min(n, 20)
         n -= cnt
+        # print("quary gpt")
         res = completions_with_backoff(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens, n=cnt, stop=stop)
+        # print("receive res")
         outputs.extend([choice.message.content for choice in res.choices])
         # log completion tokens
         completion_tokens += res.usage.completion_tokens
+        # if res.usage.completion_tokens >= 500:
+        #     print(f"Too much tokens! res: {[choice.message.content for choice in res.choices]}")
         prompt_tokens += res.usage.prompt_tokens
     return outputs
     

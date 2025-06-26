@@ -87,6 +87,7 @@ class Game24Task(Task):
         if len(y.strip().split('\n')) == 4 and 'answer' not in y.lower():
             return 0
         value_names = [_.split('\n')[-1] for _ in value_outputs]
-        value_map = {'impossible': 0.001, 'likely': 1, 'sure': 20}  # TODO: ad hoc
+        # print(f"value name: {value_names}")
+        value_map = {'impossible': 0.001, 'likely': 1, 'sure': 20, '**impossible**': 0.001, '**likely**': 1, '**sure**': 20}  # TODO: ad hoc
         value = sum(value * value_names.count(name) for name, value in value_map.items())
         return value

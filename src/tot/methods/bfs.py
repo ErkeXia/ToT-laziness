@@ -1,13 +1,23 @@
 import itertools
+import time
 import numpy as np
 from functools import partial
 from tot.models import gpt
 
+propose_num = value_num = 0
+propose_time = value_time = 0
+
 def get_value(task, x, y, n_evaluate_sample, cache_value=True):
+    global value_num, value_time
+    value_num += 1
     value_prompt = task.value_prompt_wrap(x, y)
     if cache_value and value_prompt in task.value_cache:
         return task.value_cache[value_prompt]
+    start = time.perf_counter()
     value_outputs = gpt(value_prompt, n=n_evaluate_sample, stop=None)
+    print(value_outputs)
+    elapsed = time.perf_counter() - start
+    value_time += elapsed
     value = task.value_outputs_unwrap(x, y, value_outputs)
     if cache_value:
         task.value_cache[value_prompt] = value
@@ -32,8 +42,14 @@ def get_votes(task, x, ys, n_evaluate_sample):
     return values
 
 def get_proposals(task, x, y): 
+    global propose_num, propose_time
+    propose_num += 1
     propose_prompt = task.propose_prompt_wrap(x, y)
+    start = time.perf_counter()
     proposals = gpt(propose_prompt, n=1, stop=None)[0].split('\n')
+    elapsed = time.perf_counter() - start
+    propose_time += elapsed
+    proposals = [s for s in proposals if not ("Input" in s or "steps" in s)]
     return [y + _ + '\n' for _ in proposals]
 
 def get_samples(task, x, y, n_generate_sample, prompt_sample, stop):
@@ -51,6 +67,7 @@ def solve(args, task, idx, to_print=True):
     gpt = partial(gpt, model=args.backend, temperature=args.temperature)
     print(gpt)
     x = task.get_input(idx)  # input
+    print(f"x = {x}")
     ys = ['']  # current output candidates
     infos = []
     for step in range(task.steps):
@@ -94,3 +111,8 @@ def naive_solve(args, task, idx, to_print=True):
     x = task.get_input(idx)  # input
     ys = get_samples(task, x, '', args.n_generate_sample, args.prompt_sample, stop=None)
     return ys, {}
+
+def get_time():
+    global propose_num, propose_time, value_num, value_time
+    print(f"propose num: {propose_num}, propose time per num: {(propose_time/propose_num):.6f}")
+    print(f"value num: {value_num}, value time per num: {(value_time/value_num):.6f}")
