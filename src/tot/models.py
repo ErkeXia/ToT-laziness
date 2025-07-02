@@ -39,7 +39,11 @@ def chatgpt(messages, model="gpt-4", temperature=0.7, max_tokens=1000, n=1, stop
         #     print(f"Too much tokens! res: {[choice.message.content for choice in res.choices]}")
         prompt_tokens += res.usage.prompt_tokens
     return outputs
-    
+
+def reset():
+    global completion_tokens, prompt_tokens
+    completion_tokens = prompt_tokens = 0
+
 def gpt_usage(backend="gpt-4"):
     global completion_tokens, prompt_tokens
     if backend == "gpt-4":

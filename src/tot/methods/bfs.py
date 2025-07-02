@@ -15,7 +15,7 @@ def get_value(task, x, y, n_evaluate_sample, cache_value=True):
         return task.value_cache[value_prompt]
     start = time.perf_counter()
     value_outputs = gpt(value_prompt, n=n_evaluate_sample, stop=None)
-    print(value_outputs)
+    # print(value_outputs)
     elapsed = time.perf_counter() - start
     value_time += elapsed
     value = task.value_outputs_unwrap(x, y, value_outputs)
@@ -64,7 +64,13 @@ def get_samples(task, x, y, n_generate_sample, prompt_sample, stop):
 
 def solve(args, task, idx, to_print=True):
     global gpt
+    global thoughts
+    global value_num, value_time
+    global propose_num, propose_time
+    thoughts = [[] for _ in range(task.steps)]
     gpt = partial(gpt, model=args.backend, temperature=args.temperature)
+    propose_num = value_num = 0
+    propose_time = value_time = 0
     print(gpt)
     x = task.get_input(idx)  # input
     print(f"x = {x}")
@@ -99,10 +105,10 @@ def solve(args, task, idx, to_print=True):
         
         infos.append({'step': step, 'x': x, 'ys': ys, 'new_ys': new_ys, 'values': values, 'select_new_ys': select_new_ys})
         ys = select_new_ys
-    
+        thoughts[step] = ys
     if to_print: 
         print(ys)
-    return ys, {'steps': infos}
+    return x, ys, {'steps': infos}, thoughts
 
 def naive_solve(args, task, idx, to_print=True):
     global gpt
@@ -116,3 +122,4 @@ def get_time():
     global propose_num, propose_time, value_num, value_time
     print(f"propose num: {propose_num}, propose time per num: {(propose_time/propose_num):.6f}")
     print(f"value num: {value_num}, value time per num: {(value_time/value_num):.6f}")
+    return propose_num, value_num, (propose_time/propose_num), (value_time/value_num)

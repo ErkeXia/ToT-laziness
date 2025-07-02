@@ -70,14 +70,15 @@ task = Game24Task()
 start = time.perf_counter()
 # global gpt
 # gpt = partial(gpt, model="gpt-4", temperature=0.7)
-for i in range(10):
-    value_outputs = gpt(value_prompt, model="gpt-4.1", n=1, stop=None)
-    value = task.value_outputs_unwrap(x, y, value_outputs)
+for i in range(1):
+    print(x)
+    value_outputs = gpt(propose_prompt, model="gpt-4.1", n=1, stop=None)
+    # value = task.value_outputs_unwrap(x, y, value_outputs)
     print(value_outputs)
     # .split('\n')
     # proposals = [s for s in proposals if not ("Input" in s or "steps" in s)]
     # value = get_value(Game24Task(), x, y, 1, cache_value = False)
-    print(value)
+    # print(value)
 elapsed = time.perf_counter() - start
 print(f"{elapsed:.6f} seconds")
-print(value)
+# print(value)
