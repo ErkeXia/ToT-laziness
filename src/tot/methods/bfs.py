@@ -14,7 +14,7 @@ def get_value(task, x, y, n_evaluate_sample, cache_value=True):
     if cache_value and value_prompt in task.value_cache:
         return task.value_cache[value_prompt]
     start = time.perf_counter()
-    value_outputs = gpt(value_prompt, n=n_evaluate_sample, stop=None)
+    value_outputs = gpt(value_prompt, n=n_evaluate_sample, stop=None, max_tokens=200)
     # print(value_outputs)
     elapsed = time.perf_counter() - start
     value_time += elapsed
@@ -46,7 +46,7 @@ def get_proposals(task, x, y):
     propose_num += 1
     propose_prompt = task.propose_prompt_wrap(x, y)
     start = time.perf_counter()
-    proposals = gpt(propose_prompt, n=1, stop=None)[0].split('\n')
+    proposals = gpt(propose_prompt, n=1, stop=None, max_tokens=200)[0].split('\n')
     elapsed = time.perf_counter() - start
     propose_time += elapsed
     proposals = [s for s in proposals if not ("Input" in s or "steps" in s)]
@@ -62,11 +62,24 @@ def get_samples(task, x, y, n_generate_sample, prompt_sample, stop):
     samples = gpt(prompt, n=n_generate_sample, stop=stop)
     return [y + _ for _ in samples]
 
+def get_current_numbers(y: str) -> str:
+    last_line = y.strip().split('\n')[-1]
+    return last_line.split('left: ')[-1].split(')')[0]
+
+def check_answer(ys): #This is only for game of 24
+    for y in ys:
+        if get_current_numbers(y) == '24' or 'Answer' in y or 'answer' in y:
+            print("Found the answer! \n")
+            return y
+    return None
+
 def solve(args, task, idx, to_print=True):
     global gpt
     global thoughts
     global value_num, value_time
     global propose_num, propose_time
+    nodes_num = 1
+    
     thoughts = [[] for _ in range(task.steps)]
     gpt = partial(gpt, model=args.backend, temperature=args.temperature)
     propose_num = value_num = 0
@@ -90,6 +103,8 @@ def solve(args, task, idx, to_print=True):
         elif args.method_evaluate == 'value':
             values = get_values(task, x, new_ys, args.n_evaluate_sample)
 
+        # if step == task.steps - 1:
+        #     print(f"Reach final layer! \n x = {x} \n new_ys = {new_ys} \n value = {values}")
         # selection
         if args.method_select == 'sample':
             ps = np.array(values) / sum(values)
@@ -106,9 +121,14 @@ def solve(args, task, idx, to_print=True):
         infos.append({'step': step, 'x': x, 'ys': ys, 'new_ys': new_ys, 'values': values, 'select_new_ys': select_new_ys})
         ys = select_new_ys
         thoughts[step] = ys
+        nodes_num += len(ys)
+        ans = check_answer(ys)
+        if ans != None:
+            print("Find final answer!\n")
+            return x, [ans], {'steps': infos}, thoughts, nodes_num
     if to_print: 
         print(ys)
-    return x, ys, {'steps': infos}, thoughts
+    return x, ys, {'steps': infos}, thoughts, nodes_num
 
 def naive_solve(args, task, idx, to_print=True):
     global gpt

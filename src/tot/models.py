@@ -52,4 +52,6 @@ def gpt_usage(backend="gpt-4"):
         cost = completion_tokens / 1000 * 0.002 + prompt_tokens / 1000 * 0.0015
     elif backend == "gpt-4o":
         cost = completion_tokens / 1000 * 0.00250 + prompt_tokens / 1000 * 0.01
-    return {"completion_tokens": completion_tokens, "prompt_tokens": prompt_tokens, "cost": cost}
+    # return {"completion_tokens": completion_tokens, "prompt_tokens": prompt_tokens, "cost": cost}
+    return {"completion_tokens": completion_tokens, "prompt_tokens": prompt_tokens}
+

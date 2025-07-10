@@ -1,0 +1,102 @@
+nohup: ignoring input
+Testing lazy:   0%|          | 0/50 [00:00<?, ?it/s]propose num: 11, propose time per num: 3.683467
+value num: 85, value time per num: 2.796146
+Testing lazy:   2%|¨‡         | 1/50 [04:38<3:47:11, 278.20s/it]propose num: 16, propose time per num: 3.443261
+value num: 126, value time per num: 2.084279
+Testing lazy:   4%|¨…         | 2/50 [09:55<4:01:09, 301.44s/it]propose num: 11, propose time per num: 3.440507
+value num: 88, value time per num: 2.580952
+Testing lazy:   6%|¨„         | 3/50 [14:20<3:43:05, 284.79s/it]propose num: 16, propose time per num: 3.107034
+value num: 127, value time per num: 1.719426
+Testing lazy:   8%|¨‚         | 4/50 [18:48<3:33:16, 278.19s/it]propose num: 11, propose time per num: 3.066670
+value num: 81, value time per num: 2.620359
+Testing lazy:  10%|¨€         | 5/50 [22:54<3:19:56, 266.58s/it]propose num: 11, propose time per num: 3.616426
+value num: 88, value time per num: 1.938105
+Testing lazy:  12%|¨€¨‡        | 6/50 [26:25<3:01:28, 247.46s/it]propose num: 11, propose time per num: 2.667696
+value num: 88, value time per num: 1.057879
+Testing lazy:  14%|¨€¨…        | 7/50 [28:27<2:28:03, 206.59s/it]propose num: 11, propose time per num: 3.417025
+value num: 87, value time per num: 0.637802
+Testing lazy:  16%|¨€¨„        | 8/50 [30:00<1:59:18, 170.45s/it]propose num: 11, propose time per num: 3.416154
+value num: 88, value time per num: 2.079383
+Testing lazy:  18%|¨€¨‚        | 9/50 [33:41<2:07:10, 186.12s/it]propose num: 16, propose time per num: 3.441926
+value num: 128, value time per num: 1.221213
+Testing lazy:  20%|¨€¨€        | 10/50 [37:12<2:09:16, 193.92s/it]propose num: 11, propose time per num: 2.761160
+value num: 88, value time per num: 2.052857
+Testing lazy:  22%|¨€¨€¨‡       | 11/50 [40:43<2:09:27, 199.16s/it]propose num: 11, propose time per num: 2.833297
+value num: 88, value time per num: 1.629506
+Testing lazy:  24%|¨€¨€¨…       | 12/50 [43:38<2:01:23, 191.68s/it]propose num: 11, propose time per num: 3.162409
+value num: 88, value time per num: 1.504523
+Testing lazy:  26%|¨€¨€¨„       | 13/50 [46:25<1:53:37, 184.26s/it]propose num: 16, propose time per num: 3.103243
+value num: 119, value time per num: 0.741214
+Testing lazy:  28%|¨€¨€¨‚       | 14/50 [48:43<1:42:08, 170.24s/it]propose num: 11, propose time per num: 2.924505
+value num: 88, value time per num: 1.208706
+Testing lazy:  30%|¨€¨€¨€       | 15/50 [51:01<1:33:44, 160.69s/it]propose num: 11, propose time per num: 3.573212
+value num: 88, value time per num: 0.777975
+Testing lazy:  32%|¨€¨€¨€¨‡      | 16/50 [52:49<1:22:01, 144.76s/it]propose num: 11, propose time per num: 3.122956
+value num: 88, value time per num: 1.352998
+Testing lazy:  34%|¨€¨€¨€¨…      | 17/50 [55:23<1:21:03, 147.36s/it]propose num: 11, propose time per num: 3.093046
+value num: 88, value time per num: 1.863175
+Testing lazy:  36%|¨€¨€¨€¨„      | 18/50 [58:41<1:26:42, 162.58s/it]propose num: 11, propose time per num: 2.951363
+value num: 85, value time per num: 1.595221
+Testing lazy:  38%|¨€¨€¨€¨‚      | 19/50 [1:01:29<1:24:50, 164.22s/it]propose num: 11, propose time per num: 3.668754
+value num: 88, value time per num: 1.237981
+Testing lazy:  40%|¨€¨€¨€¨€      | 20/50 [1:03:58<1:19:52, 159.74s/it]propose num: 16, propose time per num: 2.859888
+value num: 128, value time per num: 1.022324
+Testing lazy:  42%|¨€¨€¨€¨€¨‡     | 21/50 [1:06:55<1:19:39, 164.81s/it]propose num: 11, propose time per num: 3.015259
+value num: 88, value time per num: 1.384173
+Testing lazy:  44%|¨€¨€¨€¨€¨…     | 22/50 [1:09:30<1:15:32, 161.86s/it]propose num: 11, propose time per num: 3.132646
+value num: 88, value time per num: 1.906877
+Testing lazy:  46%|¨€¨€¨€¨€¨„     | 23/50 [1:12:52<1:18:17, 173.98s/it]propose num: 11, propose time per num: 3.707929
+value num: 88, value time per num: 1.845822
+Testing lazy:  48%|¨€¨€¨€¨€¨‚     | 24/50 [1:16:15<1:19:11, 182.76s/it]propose num: 11, propose time per num: 2.698689
+value num: 88, value time per num: 1.340668
+Testing lazy:  50%|¨€¨€¨€¨€¨€     | 25/50 [1:18:43<1:11:45, 172.23s/it]propose num: 11, propose time per num: 3.002205
+value num: 88, value time per num: 1.185116
+Testing lazy:  52%|¨€¨€¨€¨€¨€¨‡    | 26/50 [1:21:00<1:04:42, 161.75s/it]propose num: 11, propose time per num: 3.470552
+value num: 85, value time per num: 1.094294
+Testing lazy:  54%|¨€¨€¨€¨€¨€¨…    | 27/50 [1:23:11<58:29, 152.59s/it]  propose num: 11, propose time per num: 3.273568
+value num: 88, value time per num: 1.314595
+Testing lazy:  56%|¨€¨€¨€¨€¨€¨„    | 28/50 [1:25:43<55:51, 152.32s/it]propose num: 11, propose time per num: 3.276686
+value num: 88, value time per num: 1.581964
+Testing lazy:  58%|¨€¨€¨€¨€¨€¨‚    | 29/50 [1:28:38<55:43, 159.20s/it]propose num: 11, propose time per num: 3.161862
+value num: 88, value time per num: 1.321788
+Testing lazy:  60%|¨€¨€¨€¨€¨€¨€    | 30/50 [1:31:09<52:15, 156.77s/it]propose num: 11, propose time per num: 2.929055
+value num: 85, value time per num: 1.388312
+Testing lazy:  62%|¨€¨€¨€¨€¨€¨€¨‡   | 31/50 [1:33:40<49:01, 154.81s/it]propose num: 11, propose time per num: 3.038506
+value num: 87, value time per num: 1.062199
+Testing lazy:  64%|¨€¨€¨€¨€¨€¨€¨…   | 32/50 [1:35:45<43:50, 146.12s/it]propose num: 11, propose time per num: 3.118877
+value num: 85, value time per num: 1.788158
+Testing lazy:  66%|¨€¨€¨€¨€¨€¨€¨„   | 33/50 [1:38:52<44:48, 158.18s/it]propose num: 11, propose time per num: 3.299928
+value num: 88, value time per num: 0.892876
+Testing lazy:  68%|¨€¨€¨€¨€¨€¨€¨‚   | 34/50 [1:40:47<38:42, 145.19s/it]propose num: 11, propose time per num: 4.027686
+value num: 88, value time per num: 0.739732
+Testing lazy:  70%|¨€¨€¨€¨€¨€¨€¨€   | 35/50 [1:42:36<33:36, 134.45s/it]propose num: 16, propose time per num: 3.036146
+value num: 122, value time per num: 1.498711
+Testing lazy:  72%|¨€¨€¨€¨€¨€¨€¨€¨‡  | 36/50 [1:46:27<38:09, 163.54s/it]propose num: 11, propose time per num: 2.951351
+value num: 85, value time per num: 0.749925
+Testing lazy:  74%|¨€¨€¨€¨€¨€¨€¨€¨…  | 37/50 [1:48:04<31:03, 143.34s/it]propose num: 11, propose time per num: 3.112973
+value num: 88, value time per num: 0.982903
+Testing lazy:  76%|¨€¨€¨€¨€¨€¨€¨€¨„  | 38/50 [1:50:04<27:18, 136.56s/it]propose num: 11, propose time per num: 3.659571
+value num: 88, value time per num: 1.441935
+Testing lazy:  78%|¨€¨€¨€¨€¨€¨€¨€¨‚  | 39/50 [1:52:52<26:43, 145.74s/it]propose num: 11, propose time per num: 3.128393
+value num: 85, value time per num: 1.024302
+Testing lazy:  80%|¨€¨€¨€¨€¨€¨€¨€¨€  | 40/50 [1:54:53<23:04, 138.46s/it]propose num: 11, propose time per num: 3.574699
+value num: 87, value time per num: 1.291471
+Testing lazy:  82%|¨€¨€¨€¨€¨€¨€¨€¨€¨‡ | 41/50 [1:57:25<21:21, 142.43s/it]propose num: 11, propose time per num: 3.114991
+value num: 88, value time per num: 0.760281
+Testing lazy:  84%|¨€¨€¨€¨€¨€¨€¨€¨€¨… | 42/50 [1:59:06<17:20, 130.05s/it]propose num: 16, propose time per num: 2.944501
+value num: 118, value time per num: 1.251113
+Testing lazy:  86%|¨€¨€¨€¨€¨€¨€¨€¨€¨„ | 43/50 [2:02:21<17:26, 149.46s/it]propose num: 11, propose time per num: 2.907136
+value num: 88, value time per num: 0.517810
+Testing lazy:  88%|¨€¨€¨€¨€¨€¨€¨€¨€¨‚ | 44/50 [2:03:38<12:47, 127.89s/it]propose num: 11, propose time per num: 3.140041
+value num: 88, value time per num: 0.360105
+Testing lazy:  90%|¨€¨€¨€¨€¨€¨€¨€¨€¨€ | 45/50 [2:04:44<09:06, 109.39s/it]propose num: 11, propose time per num: 3.092134
+value num: 87, value time per num: 0.414781
+Testing lazy:  92%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨‡| 46/50 [2:05:54<06:30, 97.60s/it] propose num: 16, propose time per num: 3.131545
+value num: 121, value time per num: 1.180218
+Testing lazy:  94%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨…| 47/50 [2:09:07<06:18, 126.20s/it]propose num: 11, propose time per num: 2.834716
+value num: 88, value time per num: 1.378318
+Testing lazy:  96%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨„| 48/50 [2:11:40<04:28, 134.08s/it]propose num: 11, propose time per num: 2.665037
+value num: 85, value time per num: 0.397008
+Testing lazy:  98%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨‚| 49/50 [2:12:43<01:52, 112.78s/it]propose num: 16, propose time per num: 2.673594
+value num: 128, value time per num: 0.758705
+Testing lazy: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 50/50 [2:15:03<00:00, 120.91s/it]Testing lazy: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 50/50 [2:15:03<00:00, 162.07s/it]

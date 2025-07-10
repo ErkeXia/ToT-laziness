@@ -80,6 +80,36 @@ Input: {input}
 Possible next steps:
 '''
 
+propose_gpt_4_1 = '''
+You aim to use numbers and basic arithmetic operations (+ - * /) to obtain 24.
+You now should provide eight possible next steps for the given input in the exact format shown in examples.
+EXAMPLE1:
+Input: 2 8 8 14
+Possible next steps:
+2 + 8 = 10 (left: 8 10 14)
+8 / 2 = 4 (left: 4 8 14)
+14 + 2 = 16 (left: 8 8 16)
+2 * 8 = 16 (left: 8 14 16)
+8 - 2 = 6 (left: 6 8 14)
+14 - 8 = 6 (left: 2 6 8)
+14 /  2 = 7 (left: 7 8 8)
+14 - 2 = 12 (left: 8 8 12)
+EXAMPLE2:
+Input: 2 12
+Possible next steps:
+2 * 12 = 24 (left: 24)
+2 + 12 = 14 (left: 14)
+12 - 2 = 10 (left: 10)
+2 - 12 = -10 (left: -10)
+12 / 2 = 6 (left: 6)
+12 + 2 = 14 (left: 14)
+12 * 2 = 24 (left: 24)
+2 / 12 = 0.17 (left: 0.17)
+TASK:
+Input: {input}
+Possible next steps:
+'''
+
 value_prompt = '''Evaluate if given numbers can reach 24 (sure/likely/impossible)
 10 14
 10 + 14 = 24
